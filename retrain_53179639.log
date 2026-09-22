@@ -1,0 +1,16 @@
+
+CondaError: Run 'conda init' before 'conda activate'
+
+usage: plan_step3_guru.py [-h] [--label {success,n_steps}] [--n_episodes N_EPISODES] [--lr LR] [--d_model D_MODEL] [--lambda_ent LAMBDA_ENT] [--n_runs_eval N_RUNS_EVAL] [--eval_only] [--ckpt CKPT]
+plan_step3_guru.py: error: unrecognized arguments: --contrastive --seed 42 --save_path checkpoints_planning/guru_contrastive_v2.pt
+Traceback (most recent call last):
+  File "<stdin>", line 20, in <module>
+  File "/home/mroycho1/.conda/envs/mdebnath/lib/python3.14/site-packages/torch/serialization.py", line 1530, in load
+    with _open_file_like(f, "rb") as opened_file:
+         ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/mroycho1/.conda/envs/mdebnath/lib/python3.14/site-packages/torch/serialization.py", line 795, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+  File "/home/mroycho1/.conda/envs/mdebnath/lib/python3.14/site-packages/torch/serialization.py", line 776, in __init__
+    super().__init__(open(name, mode))  # noqa: SIM115
+                     ~~~~^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/scratch/mroycho1/GURU/checkpoints_planning/guru_contrastive_v2.pt'

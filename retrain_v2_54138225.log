@@ -1,0 +1,45 @@
+=== START Thu Jun  4 16:58:28 MST 2026 on sg026 ===
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+Python: /home/mroycho1/.conda/envs/mdebnath/bin/python3
+PyTorch: 2.11.0+cu130 True
+
+=== Training with plan_step3_guru.py (6 seeds via torch.manual_seed) ===
+
+--- SEED 0 ---
+Saved: /scratch/mroycho1/GURU/checkpoints_planning/arc_final_seed0.pt
+Eval seed 0:
+BW=0.585 LOG=0.101 MBW=0.067 mean=0.251
+
+--- SEED 1 ---
+Saved: /scratch/mroycho1/GURU/checkpoints_planning/arc_final_seed1.pt
+Eval seed 1:
+BW=0.585 LOG=0.101 MBW=0.067 mean=0.251
+
+--- SEED 2 ---
+Saved: /scratch/mroycho1/GURU/checkpoints_planning/arc_final_seed2.pt
+Eval seed 2:
+BW=0.585 LOG=0.101 MBW=0.067 mean=0.251
+
+--- SEED 3 ---
+Saved: /scratch/mroycho1/GURU/checkpoints_planning/arc_final_seed3.pt
+Eval seed 3:
+BW=0.585 LOG=0.101 MBW=0.067 mean=0.251
+
+--- SEED 42 ---
+Saved: /scratch/mroycho1/GURU/checkpoints_planning/arc_final_seed42.pt
+Eval seed 42:
+BW=0.585 LOG=0.101 MBW=0.067 mean=0.251
+
+--- SEED 123 ---
+Saved: /scratch/mroycho1/GURU/checkpoints_planning/arc_final_seed123.pt
+Eval seed 123:
+BW=0.585 LOG=0.101 MBW=0.067 mean=0.251
+
+=== FINAL SUMMARY ===
+  arc_final_seed0.pt: BW=0.585 LOG=0.101 MBW=0.067 mean=0.251
+  arc_final_seed1.pt: BW=0.585 LOG=0.101 MBW=0.067 mean=0.251
+  arc_final_seed123.pt: BW=0.585 LOG=0.101 MBW=0.067 mean=0.251
+  arc_final_seed2.pt: BW=0.585 LOG=0.101 MBW=0.067 mean=0.251
+  arc_final_seed3.pt: BW=0.585 LOG=0.101 MBW=0.067 mean=0.251
+  arc_final_seed42.pt: BW=0.585 LOG=0.101 MBW=0.067 mean=0.251
+=== END Thu Jun  4 17:00:21 MST 2026 ===

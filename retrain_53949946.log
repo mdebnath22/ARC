@@ -1,0 +1,119 @@
+
+CondaError: Run 'conda init' before 'conda activate'
+
+=== START Sun May 31 23:51:41 MST 2026 on sg005 ===
+=== Available training scripts ===
+plan_step10_baselines_improvements.py
+plan_step10_meta_baselines.py
+plan_step11_domain_id_ablation.py
+plan_step11_new_experiments.py
+plan_step12_calibration.py
+plan_step12_critical_experiments.py
+plan_step13_pareto.py
+plan_step13_qwen_eval.py
+plan_step14_bfs_budget_sensitivity.py
+plan_step14_e2_corrected.py
+plan_step15_qwen72b_eval.py
+plan_step15_qwen72b_pu.py
+plan_step16_arc_improvements.py
+plan_step17_arc_v2.py
+plan_step18_baselines_and_ablations.py
+plan_step19_ipc_scale.py
+plan_step1_collect_trajectories.py
+plan_step1_data_prep.py
+plan_step1_data_prep_real.py
+plan_step20_routing_analysis.py
+
+--- Training with seed=0 ---
+  hard_neg+contrastive                  0.480   0.134   0.274     0.296
+  euclid+contrastive                    0.064   0.154   0.362     0.193
+  hard_neg+euclid+contrastive           0.722   0.480   0.488     0.563
+
+  Full results → /scratch/mroycho1/GURU/results_planning/arc_improvements_ablation.json
+Newest checkpoint: checkpoints_planning/guru_hard_neg+euclid+contrastive.pt
+Performance: ERROR: Error(s) in loading state_dict for PlanningGURU:
+	Missing key(s) in state_dict: "query_enc.net.0.weight", "query_enc.net.0.bias", "query_enc.net.1.weight", "query_enc.net.1.bias", "query_enc.net.4.weight", "query_enc.net.4.bias", "query_enc.net.5.weight", "query_enc.net.5.bias", "key_enc.net.0.weight", "key_enc.net.0.bias", "key_enc.net.1.weight", "key_enc.net.1.bias", "key_enc.net.4.weight", "key_enc.net.4.bias", "key_enc.net.5.weight", "key_enc.net.5.bias". 
+	Unexpected key(s) in state_dict: "query_enc.0.weight", "query_enc.0.bias", "query_enc.1.weight", "query_enc.1.bias", "query_enc.4.weight", "query_enc.4.bias", "query_enc.5.weight", "query_enc.5.bias", "key_enc.0.weight", "key_enc.0.bias", "key_enc.1.weight", "key_enc.1.bias", "key_enc.3.weight", "key_enc.3.bias", "key_enc.4.weight", "key_enc.4.bias". 
+Traceback (most recent call last):
+  File "<string>", line 6, in <module>
+    from sklearn.preprocessing import StandardScaler, PCA
+ImportError: cannot import name 'PCA' from 'sklearn.preprocessing' (/home/mroycho1/.conda/envs/mdebnath/lib/python3.14/site-packages/sklearn/preprocessing/__init__.py)
+
+--- Training with seed=1 ---
+  hard_neg+contrastive                  0.736   0.164   0.556     0.485
+  euclid+contrastive                    0.026   0.222   0.488     0.246
+  hard_neg+euclid+contrastive           0.223   0.579   0.278     0.360
+
+  Full results → /scratch/mroycho1/GURU/results_planning/arc_improvements_ablation.json
+Newest checkpoint: checkpoints_planning/guru_hard_neg+euclid+contrastive.pt
+Performance: ERROR: Error(s) in loading state_dict for PlanningGURU:
+	Missing key(s) in state_dict: "query_enc.net.0.weight", "query_enc.net.0.bias", "query_enc.net.1.weight", "query_enc.net.1.bias", "query_enc.net.4.weight", "query_enc.net.4.bias", "query_enc.net.5.weight", "query_enc.net.5.bias", "key_enc.net.0.weight", "key_enc.net.0.bias", "key_enc.net.1.weight", "key_enc.net.1.bias", "key_enc.net.4.weight", "key_enc.net.4.bias", "key_enc.net.5.weight", "key_enc.net.5.bias". 
+	Unexpected key(s) in state_dict: "query_enc.0.weight", "query_enc.0.bias", "query_enc.1.weight", "query_enc.1.bias", "query_enc.4.weight", "query_enc.4.bias", "query_enc.5.weight", "query_enc.5.bias", "key_enc.0.weight", "key_enc.0.bias", "key_enc.1.weight", "key_enc.1.bias", "key_enc.3.weight", "key_enc.3.bias", "key_enc.4.weight", "key_enc.4.bias". 
+Traceback (most recent call last):
+  File "<string>", line 6, in <module>
+    from sklearn.preprocessing import StandardScaler, PCA
+ImportError: cannot import name 'PCA' from 'sklearn.preprocessing' (/home/mroycho1/.conda/envs/mdebnath/lib/python3.14/site-packages/sklearn/preprocessing/__init__.py)
+
+--- Training with seed=2 ---
+  hard_neg+contrastive                  0.031   0.402   0.360     0.264
+  euclid+contrastive                    0.645   0.312   0.436     0.464
+  hard_neg+euclid+contrastive           0.298   0.024   0.524     0.282
+
+  Full results → /scratch/mroycho1/GURU/results_planning/arc_improvements_ablation.json
+Newest checkpoint: checkpoints_planning/guru_hard_neg+euclid+contrastive.pt
+Performance: ERROR: Error(s) in loading state_dict for PlanningGURU:
+	Missing key(s) in state_dict: "query_enc.net.0.weight", "query_enc.net.0.bias", "query_enc.net.1.weight", "query_enc.net.1.bias", "query_enc.net.4.weight", "query_enc.net.4.bias", "query_enc.net.5.weight", "query_enc.net.5.bias", "key_enc.net.0.weight", "key_enc.net.0.bias", "key_enc.net.1.weight", "key_enc.net.1.bias", "key_enc.net.4.weight", "key_enc.net.4.bias", "key_enc.net.5.weight", "key_enc.net.5.bias". 
+	Unexpected key(s) in state_dict: "query_enc.0.weight", "query_enc.0.bias", "query_enc.1.weight", "query_enc.1.bias", "query_enc.4.weight", "query_enc.4.bias", "query_enc.5.weight", "query_enc.5.bias", "key_enc.0.weight", "key_enc.0.bias", "key_enc.1.weight", "key_enc.1.bias", "key_enc.3.weight", "key_enc.3.bias", "key_enc.4.weight", "key_enc.4.bias". 
+Traceback (most recent call last):
+  File "<string>", line 6, in <module>
+    from sklearn.preprocessing import StandardScaler, PCA
+ImportError: cannot import name 'PCA' from 'sklearn.preprocessing' (/home/mroycho1/.conda/envs/mdebnath/lib/python3.14/site-packages/sklearn/preprocessing/__init__.py)
+
+--- Training with seed=3 ---
+  hard_neg+contrastive                  0.700   0.126   0.584     0.470
+  euclid+contrastive                    0.220   0.532   0.360     0.371
+  hard_neg+euclid+contrastive           0.571   0.119   0.463     0.384
+
+  Full results → /scratch/mroycho1/GURU/results_planning/arc_improvements_ablation.json
+Newest checkpoint: checkpoints_planning/guru_hard_neg+euclid+contrastive.pt
+Performance: ERROR: Error(s) in loading state_dict for PlanningGURU:
+	Missing key(s) in state_dict: "query_enc.net.0.weight", "query_enc.net.0.bias", "query_enc.net.1.weight", "query_enc.net.1.bias", "query_enc.net.4.weight", "query_enc.net.4.bias", "query_enc.net.5.weight", "query_enc.net.5.bias", "key_enc.net.0.weight", "key_enc.net.0.bias", "key_enc.net.1.weight", "key_enc.net.1.bias", "key_enc.net.4.weight", "key_enc.net.4.bias", "key_enc.net.5.weight", "key_enc.net.5.bias". 
+	Unexpected key(s) in state_dict: "query_enc.0.weight", "query_enc.0.bias", "query_enc.1.weight", "query_enc.1.bias", "query_enc.4.weight", "query_enc.4.bias", "query_enc.5.weight", "query_enc.5.bias", "key_enc.0.weight", "key_enc.0.bias", "key_enc.1.weight", "key_enc.1.bias", "key_enc.3.weight", "key_enc.3.bias", "key_enc.4.weight", "key_enc.4.bias". 
+Traceback (most recent call last):
+  File "<string>", line 6, in <module>
+    from sklearn.preprocessing import StandardScaler, PCA
+ImportError: cannot import name 'PCA' from 'sklearn.preprocessing' (/home/mroycho1/.conda/envs/mdebnath/lib/python3.14/site-packages/sklearn/preprocessing/__init__.py)
+
+--- Training with seed=42 ---
+  hard_neg+contrastive                  0.010   0.217   0.287     0.172
+  euclid+contrastive                    0.711   0.570   0.521     0.600
+  hard_neg+euclid+contrastive           0.634   0.175   0.006     0.272
+
+  Full results → /scratch/mroycho1/GURU/results_planning/arc_improvements_ablation.json
+Newest checkpoint: checkpoints_planning/guru_hard_neg+euclid+contrastive.pt
+Performance: ERROR: Error(s) in loading state_dict for PlanningGURU:
+	Missing key(s) in state_dict: "query_enc.net.0.weight", "query_enc.net.0.bias", "query_enc.net.1.weight", "query_enc.net.1.bias", "query_enc.net.4.weight", "query_enc.net.4.bias", "query_enc.net.5.weight", "query_enc.net.5.bias", "key_enc.net.0.weight", "key_enc.net.0.bias", "key_enc.net.1.weight", "key_enc.net.1.bias", "key_enc.net.4.weight", "key_enc.net.4.bias", "key_enc.net.5.weight", "key_enc.net.5.bias". 
+	Unexpected key(s) in state_dict: "query_enc.0.weight", "query_enc.0.bias", "query_enc.1.weight", "query_enc.1.bias", "query_enc.4.weight", "query_enc.4.bias", "query_enc.5.weight", "query_enc.5.bias", "key_enc.0.weight", "key_enc.0.bias", "key_enc.1.weight", "key_enc.1.bias", "key_enc.3.weight", "key_enc.3.bias", "key_enc.4.weight", "key_enc.4.bias". 
+Traceback (most recent call last):
+  File "<string>", line 6, in <module>
+    from sklearn.preprocessing import StandardScaler, PCA
+ImportError: cannot import name 'PCA' from 'sklearn.preprocessing' (/home/mroycho1/.conda/envs/mdebnath/lib/python3.14/site-packages/sklearn/preprocessing/__init__.py)
+
+--- Training with seed=123 ---
+  hard_neg+contrastive                  0.502   0.461   0.423     0.462
+  euclid+contrastive                    0.552   0.049   0.098     0.233
+  hard_neg+euclid+contrastive           0.722   0.574   0.401     0.566
+
+  Full results → /scratch/mroycho1/GURU/results_planning/arc_improvements_ablation.json
+Newest checkpoint: checkpoints_planning/guru_hard_neg+euclid+contrastive.pt
+Performance: ERROR: Error(s) in loading state_dict for PlanningGURU:
+	Missing key(s) in state_dict: "query_enc.net.0.weight", "query_enc.net.0.bias", "query_enc.net.1.weight", "query_enc.net.1.bias", "query_enc.net.4.weight", "query_enc.net.4.bias", "query_enc.net.5.weight", "query_enc.net.5.bias", "key_enc.net.0.weight", "key_enc.net.0.bias", "key_enc.net.1.weight", "key_enc.net.1.bias", "key_enc.net.4.weight", "key_enc.net.4.bias", "key_enc.net.5.weight", "key_enc.net.5.bias". 
+	Unexpected key(s) in state_dict: "query_enc.0.weight", "query_enc.0.bias", "query_enc.1.weight", "query_enc.1.bias", "query_enc.4.weight", "query_enc.4.bias", "query_enc.5.weight", "query_enc.5.bias", "key_enc.0.weight", "key_enc.0.bias", "key_enc.1.weight", "key_enc.1.bias", "key_enc.3.weight", "key_enc.3.bias", "key_enc.4.weight", "key_enc.4.bias". 
+Traceback (most recent call last):
+  File "<string>", line 6, in <module>
+    from sklearn.preprocessing import StandardScaler, PCA
+ImportError: cannot import name 'PCA' from 'sklearn.preprocessing' (/home/mroycho1/.conda/envs/mdebnath/lib/python3.14/site-packages/sklearn/preprocessing/__init__.py)
+
+=== FINAL: All saved checkpoints ===
+None saved
+=== END Mon Jun  1 01:18:11 MST 2026 ===

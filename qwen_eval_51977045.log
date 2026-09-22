@@ -1,0 +1,208 @@
+Job started on sg050 at Tue Apr 28 19:42:50 MST 2026
+========================================================================
+Loaded: Ollama 0.12.10
+========================================================================
+
+Ollama Host for this session http://sg050:11434
+
+To start the ollama server in the background run
+   ollama-start
+
+To stop the ollama server run
+   ollama-stop
+
+*************************************************
+NOTE Ollama will not run on a login node, start
+an interactive session to run ollama ie
+  interactive -G 1 -t 0-4:00
+That will start an session for 4 hours with a GPU
+*************************************************
+     
+/var/spool/slurmd/job51977045/slurm_script: line 12: ollama-start: command not found
+Ollama started, port: 
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    import json,sys; d=json.load(sys.stdin); print('TEST OK:', d.get('response','EMPTY')[:50])
+                       ~~~~~~~~~^^^^^^^^^^^
+  File "/home/mroycho1/.conda/envs/mdebnath/lib/python3.14/json/__init__.py", line 298, in load
+    return loads(fp.read(),
+        cls=cls, object_hook=object_hook,
+        parse_float=parse_float, parse_int=parse_int,
+        parse_constant=parse_constant, object_pairs_hook=object_pairs_hook, **kw)
+  File "/home/mroycho1/.conda/envs/mdebnath/lib/python3.14/json/__init__.py", line 352, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/home/mroycho1/.conda/envs/mdebnath/lib/python3.14/json/decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mroycho1/.conda/envs/mdebnath/lib/python3.14/json/decoder.py", line 363, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+============================================================
+Qwen 72B Evaluation
+  host:  http://sc011:
+  model: qwen2.5:72b
+  out:   /scratch/mroycho1/GURU/results_planning/qwen72b_eval_instances.jsonl
+============================================================
+
+ERROR: Cannot reach http://sc011:: <urlopen error [Errno 111] Connection refused>
+Step 15 done at Tue Apr 28 19:43:53 MST 2026
+
+=================================================================
+PHASE 4: Qwen 72B evaluation on 600 instances/domain
+  Host:  http://sc011:
+  Model: qwen2.5:72b
+=================================================================
+  To evaluate: 1800 instances
+
+  [50/1800]
+    blocksworld: 0/50 = 0.0%
+
+  [100/1800]
+    blocksworld: 0/100 = 0.0%
+
+  [150/1800]
+    blocksworld: 0/150 = 0.0%
+
+  [200/1800]
+    blocksworld: 0/200 = 0.0%
+
+  [250/1800]
+    blocksworld: 0/250 = 0.0%
+
+  [300/1800]
+    blocksworld: 0/300 = 0.0%
+
+  [350/1800]
+    blocksworld: 0/350 = 0.0%
+
+  [400/1800]
+    blocksworld: 0/400 = 0.0%
+
+  [450/1800]
+    blocksworld: 0/450 = 0.0%
+
+  [500/1800]
+    blocksworld: 0/500 = 0.0%
+
+  [550/1800]
+    blocksworld: 0/550 = 0.0%
+
+  [600/1800]
+    blocksworld: 0/600 = 0.0%
+
+  [650/1800]
+    blocksworld: 0/600 = 0.0%
+    logistics: 0/50 = 0.0%
+
+  [700/1800]
+    blocksworld: 0/600 = 0.0%
+    logistics: 0/100 = 0.0%
+
+  [750/1800]
+    blocksworld: 0/600 = 0.0%
+    logistics: 0/150 = 0.0%
+
+  [800/1800]
+    blocksworld: 0/600 = 0.0%
+    logistics: 0/200 = 0.0%
+
+  [850/1800]
+    blocksworld: 0/600 = 0.0%
+    logistics: 0/250 = 0.0%
+
+  [900/1800]
+    blocksworld: 0/600 = 0.0%
+    logistics: 0/300 = 0.0%
+
+  [950/1800]
+    blocksworld: 0/600 = 0.0%
+    logistics: 0/350 = 0.0%
+
+  [1000/1800]
+    blocksworld: 0/600 = 0.0%
+    logistics: 0/400 = 0.0%
+
+  [1050/1800]
+    blocksworld: 0/600 = 0.0%
+    logistics: 0/450 = 0.0%
+
+  [1100/1800]
+    blocksworld: 0/600 = 0.0%
+    logistics: 0/500 = 0.0%
+
+  [1150/1800]
+    blocksworld: 0/600 = 0.0%
+    logistics: 0/550 = 0.0%
+
+  [1200/1800]
+    blocksworld: 0/600 = 0.0%
+    logistics: 0/600 = 0.0%
+
+  [1250/1800]
+    blocksworld: 0/600 = 0.0%
+    logistics: 0/600 = 0.0%
+    mystery_blocksworld: 0/50 = 0.0%
+
+  [1300/1800]
+    blocksworld: 0/600 = 0.0%
+    logistics: 0/600 = 0.0%
+    mystery_blocksworld: 0/100 = 0.0%
+
+  [1350/1800]
+    blocksworld: 0/600 = 0.0%
+    logistics: 0/600 = 0.0%
+    mystery_blocksworld: 0/150 = 0.0%
+
+  [1400/1800]
+    blocksworld: 0/600 = 0.0%
+    logistics: 0/600 = 0.0%
+    mystery_blocksworld: 0/200 = 0.0%
+
+  [1450/1800]
+    blocksworld: 0/600 = 0.0%
+    logistics: 0/600 = 0.0%
+    mystery_blocksworld: 0/250 = 0.0%
+
+  [1500/1800]
+    blocksworld: 0/600 = 0.0%
+    logistics: 0/600 = 0.0%
+    mystery_blocksworld: 0/300 = 0.0%
+
+  [1550/1800]
+    blocksworld: 0/600 = 0.0%
+    logistics: 0/600 = 0.0%
+    mystery_blocksworld: 0/350 = 0.0%
+
+  [1600/1800]
+    blocksworld: 0/600 = 0.0%
+    logistics: 0/600 = 0.0%
+    mystery_blocksworld: 0/400 = 0.0%
+
+  [1650/1800]
+    blocksworld: 0/600 = 0.0%
+    logistics: 0/600 = 0.0%
+    mystery_blocksworld: 0/450 = 0.0%
+
+  [1700/1800]
+    blocksworld: 0/600 = 0.0%
+    logistics: 0/600 = 0.0%
+    mystery_blocksworld: 0/500 = 0.0%
+
+  [1750/1800]
+    blocksworld: 0/600 = 0.0%
+    logistics: 0/600 = 0.0%
+    mystery_blocksworld: 0/550 = 0.0%
+
+  [1800/1800]
+    blocksworld: 0/600 = 0.0%
+    logistics: 0/600 = 0.0%
+    mystery_blocksworld: 0/600 = 0.0%
+
+  FINAL (qwen2.5:72b):
+  Blocksworld: 0.0% (600 instances)
+  Logistics: 0.0% (600 instances)
+  Mystery-BW: 0.0% (600 instances)
+  Results → /scratch/mroycho1/GURU/results_planning_ipc/qwen_ipc_eval.jsonl
+Step 19 done at Tue Apr 28 19:43:56 MST 2026
