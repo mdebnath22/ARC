@@ -1,0 +1,59 @@
+========================================================================
+Loaded: Ollama 0.12.10
+========================================================================
+
+Ollama Host for this session http://sg040:11434
+
+To start the ollama server in the background run
+   ollama-start
+
+To stop the ollama server run
+   ollama-stop
+
+*************************************************
+NOTE Ollama will not run on a login node, start
+an interactive session to run ollama ie
+  interactive -G 1 -t 0-4:00
+That will start an session for 4 hours with a GPU
+*************************************************
+     
+Host: http://sg040:11434
+Checking checkpoints...
+  guru_baseline_5000ep.pt: surf_dim=30  BW ρ=0.688
+  → Using guru_baseline_5000ep.pt
+
+=================================================================
+EXP C: Progressive semantic corruption
+  N=40/level  Model: qwen2.5:72b
+=================================================================
+
+    Level    Success    Refusal    Halluci
+  ----------------------------------------
+       0%      87.5%      12.5%       0.0%
+      25%      80.0%      12.5%       0.0%
+      50%      75.0%      10.0%       2.5%
+      75%      57.5%      12.5%       0.0%
+     100%      52.5%      12.5%       0.0%
+
+  Stratified (0% vs 100% corruption):
+    easy: 0%=80%  100%=0%  drop=+80%
+
+  Interaction test (hard instances degrade faster?):
+    easy: drop=80.0%
+  → Interaction weak: hard=0.0% easy=80.0%
+
+  Saved → /scratch/mroycho1/GURU/results_planning/progressive_corruption.json
+
+Done.
+
+STRUCTURAL-SEMANTIC DISSOCIATION TABLE
+===========================================================================
+Level        LLM%   Refusal% ARC|rho|_struct  rho(ARC,LLM)  rho(|O|,LLM)
+---------------------------------------------------------------------------
+  0%         87.5%       12.5%           0.563        -0.469           nan
+  25%        80.0%       12.5%           0.563        -0.607           nan
+  50%        75.0%       10.0%           0.563        -0.303           nan
+  75%        57.5%       12.5%           0.563        -0.533           nan
+  100%       52.5%       12.5%           0.563        -0.610           nan
+
+ARC structural |rho| (constant): 0.563

@@ -1,0 +1,537 @@
+=== JOB START Sun May 31 01:26:43 MST 2026 on scg011 ===
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+========================================================================
+Loaded: Ollama 0.12.10
+========================================================================
+
+Ollama Host for this session http://scg011:11434
+
+To start the ollama server in the background run
+   ollama-start
+
+To stop the ollama server run
+   ollama-stop
+
+*************************************************
+NOTE Ollama will not run on a login node, start
+an interactive session to run ollama ie
+  interactive -G 1 -t 0-4:00
+That will start an session for 4 hours with a GPU
+*************************************************
+     
+time=2026-05-31T01:26:46.046-07:00 level=INFO source=routes.go:1525 msg="server config" env="map[CUDA_VISIBLE_DEVICES:0,1 GGML_VK_VISIBLE_DEVICES: GPU_DEVICE_ORDINAL:0,1 HIP_VISIBLE_DEVICES: HSA_OVERRIDE_GFX_VERSION: HTTPS_PROXY: HTTP_PROXY: NO_PROXY: OLLAMA_CONTEXT_LENGTH:4096 OLLAMA_DEBUG:INFO OLLAMA_FLASH_ATTENTION:false OLLAMA_GPU_OVERHEAD:0 OLLAMA_HOST:http://scg011:11434 OLLAMA_INTEL_GPU:false OLLAMA_KEEP_ALIVE:10m0s OLLAMA_KV_CACHE_TYPE: OLLAMA_LLM_LIBRARY: OLLAMA_LOAD_TIMEOUT:5m0s OLLAMA_MAX_LOADED_MODELS:0 OLLAMA_MAX_QUEUE:512 OLLAMA_MODELS:/scratch/mroycho1/.ollama/models OLLAMA_MULTIUSER_CACHE:false OLLAMA_NEW_ENGINE:false OLLAMA_NOHISTORY:false OLLAMA_NOPRUNE:false OLLAMA_NUM_PARALLEL:1 OLLAMA_ORIGINS:[* http://localhost https://localhost http://localhost:* https://localhost:* http://127.0.0.1 https://127.0.0.1 http://127.0.0.1:* https://127.0.0.1:* http://0.0.0.0 https://0.0.0.0 http://0.0.0.0:* https://0.0.0.0:* app://* file://* tauri://* vscode-webview://* vscode-file://*] OLLAMA_REMOTES:[ollama.com] OLLAMA_SCHED_SPREAD:false ROCR_VISIBLE_DEVICES:0,1 http_proxy: https_proxy: no_proxy:]"
+time=2026-05-31T01:26:46.060-07:00 level=INFO source=images.go:522 msg="total blobs: 41"
+time=2026-05-31T01:26:46.069-07:00 level=INFO source=images.go:529 msg="total unused blobs removed: 0"
+time=2026-05-31T01:26:46.073-07:00 level=INFO source=routes.go:1578 msg="Listening on 10.139.125.11:11434 (version 0.12.10)"
+time=2026-05-31T01:26:46.084-07:00 level=INFO source=runner.go:67 msg="discovering available GPUs..."
+time=2026-05-31T01:26:46.087-07:00 level=INFO source=server.go:400 msg="starting runner" cmd="/packages/apps/ollama/0.12.10/bin/ollama runner --ollama-engine --port 42893"
+time=2026-05-31T01:26:47.097-07:00 level=INFO source=server.go:400 msg="starting runner" cmd="/packages/apps/ollama/0.12.10/bin/ollama runner --ollama-engine --port 43587"
+time=2026-05-31T01:26:48.529-07:00 level=INFO source=types.go:42 msg="inference compute" id=GPU-dd9832a3-ce5c-0082-c34e-883065c25545 filter_id="" library=CUDA compute=8.0 name=CUDA0 description="NVIDIA A100-SXM4-80GB" libdirs=ollama,cuda_v12 driver=13.2 pci_id=0000:01:00.0 type=discrete total="80.0 GiB" available="79.2 GiB"
+time=2026-05-31T01:26:48.541-07:00 level=INFO source=types.go:42 msg="inference compute" id=GPU-5560f179-3799-1152-fea6-d2d8cf117700 filter_id="" library=CUDA compute=8.0 name=CUDA1 description="NVIDIA A100-SXM4-80GB" libdirs=ollama,cuda_v12 driver=13.2 pci_id=0000:c1:00.0 type=discrete total="80.0 GiB" available="78.8 GiB"
+=== Using: http://scg011:11434 ===
+[GIN] 2026/05/31 - 01:28:15 | 200 |   12.668289ms |   10.139.125.11 | GET      "/api/tags"
+Ready at 10s
+time=2026-05-31T01:28:16.103-07:00 level=INFO source=server.go:400 msg="starting runner" cmd="/packages/apps/ollama/0.12.10/bin/ollama runner --ollama-engine --port 33257"
+llama_model_loader: loaded meta data with 35 key-value pairs and 963 tensors from /scratch/mroycho1/.ollama/models/blobs/sha256-6e7fdda508e91cb0f63de5c15ff79ac63a1584ccafd751c07ca12b7f442101b8 (version GGUF V3 (latest))
+llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+llama_model_loader: - kv   0:                       general.architecture str              = qwen2
+llama_model_loader: - kv   1:                               general.type str              = model
+llama_model_loader: - kv   2:                               general.name str              = Qwen2.5 72B Instruct
+llama_model_loader: - kv   3:                           general.finetune str              = Instruct
+llama_model_loader: - kv   4:                           general.basename str              = Qwen2.5
+llama_model_loader: - kv   5:                         general.size_label str              = 72B
+llama_model_loader: - kv   6:                            general.license str              = other
+llama_model_loader: - kv   7:                       general.license.name str              = qwen
+llama_model_loader: - kv   8:                       general.license.link str              = https://huggingface.co/Qwen/Qwen2.5-7...
+llama_model_loader: - kv   9:                   general.base_model.count u32              = 1
+llama_model_loader: - kv  10:                  general.base_model.0.name str              = Qwen2.5 72B
+llama_model_loader: - kv  11:          general.base_model.0.organization str              = Qwen
+llama_model_loader: - kv  12:              general.base_model.0.repo_url str              = https://huggingface.co/Qwen/Qwen2.5-72B
+llama_model_loader: - kv  13:                               general.tags arr[str,2]       = ["chat", "text-generation"]
+llama_model_loader: - kv  14:                          general.languages arr[str,1]       = ["en"]
+llama_model_loader: - kv  15:                          qwen2.block_count u32              = 80
+llama_model_loader: - kv  16:                       qwen2.context_length u32              = 32768
+llama_model_loader: - kv  17:                     qwen2.embedding_length u32              = 8192
+llama_model_loader: - kv  18:                  qwen2.feed_forward_length u32              = 29568
+llama_model_loader: - kv  19:                 qwen2.attention.head_count u32              = 64
+llama_model_loader: - kv  20:              qwen2.attention.head_count_kv u32              = 8
+llama_model_loader: - kv  21:                       qwen2.rope.freq_base f32              = 1000000.000000
+llama_model_loader: - kv  22:     qwen2.attention.layer_norm_rms_epsilon f32              = 0.000001
+llama_model_loader: - kv  23:                          general.file_type u32              = 15
+llama_model_loader: - kv  24:                       tokenizer.ggml.model str              = gpt2
+llama_model_loader: - kv  25:                         tokenizer.ggml.pre str              = qwen2
+llama_model_loader: - kv  26:                      tokenizer.ggml.tokens arr[str,152064]  = ["!", "\"", "#", "$", "%", "&", "'", ...
+llama_model_loader: - kv  27:                  tokenizer.ggml.token_type arr[i32,152064]  = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+llama_model_loader: - kv  28:                      tokenizer.ggml.merges arr[str,151387]  = ["Ġ Ġ", "ĠĠ ĠĠ", "i n", "Ġ t",...
+llama_model_loader: - kv  29:                tokenizer.ggml.eos_token_id u32              = 151645
+llama_model_loader: - kv  30:            tokenizer.ggml.padding_token_id u32              = 151643
+llama_model_loader: - kv  31:                tokenizer.ggml.bos_token_id u32              = 151643
+llama_model_loader: - kv  32:               tokenizer.ggml.add_bos_token bool             = false
+llama_model_loader: - kv  33:                    tokenizer.chat_template str              = {%- if tools %}\n    {{- '<|im_start|>...
+llama_model_loader: - kv  34:               general.quantization_version u32              = 2
+llama_model_loader: - type  f32:  401 tensors
+llama_model_loader: - type q5_0:   40 tensors
+llama_model_loader: - type q8_0:   40 tensors
+llama_model_loader: - type q4_K:  401 tensors
+llama_model_loader: - type q5_K:   40 tensors
+llama_model_loader: - type q6_K:   41 tensors
+print_info: file format = GGUF V3 (latest)
+print_info: file type   = Q4_K - Medium
+print_info: file size   = 44.15 GiB (5.22 BPW) 
+load: printing all EOG tokens:
+load:   - 151643 ('<|endoftext|>')
+load:   - 151645 ('<|im_end|>')
+load:   - 151662 ('<|fim_pad|>')
+load:   - 151663 ('<|repo_name|>')
+load:   - 151664 ('<|file_sep|>')
+load: special tokens cache size = 22
+load: token to piece cache size = 0.9310 MB
+print_info: arch             = qwen2
+print_info: vocab_only       = 1
+print_info: model type       = ?B
+print_info: model params     = 72.71 B
+print_info: general.name     = Qwen2.5 72B Instruct
+print_info: vocab type       = BPE
+print_info: n_vocab          = 152064
+print_info: n_merges         = 151387
+print_info: BOS token        = 151643 '<|endoftext|>'
+print_info: EOS token        = 151645 '<|im_end|>'
+print_info: EOT token        = 151643 '<|endoftext|>'
+print_info: PAD token        = 151643 '<|endoftext|>'
+print_info: LF token         = 198 'Ċ'
+print_info: FIM PRE token    = 151659 '<|fim_prefix|>'
+print_info: FIM SUF token    = 151661 '<|fim_suffix|>'
+print_info: FIM MID token    = 151660 '<|fim_middle|>'
+print_info: FIM PAD token    = 151662 '<|fim_pad|>'
+print_info: FIM REP token    = 151663 '<|repo_name|>'
+print_info: FIM SEP token    = 151664 '<|file_sep|>'
+print_info: EOG token        = 151643 '<|endoftext|>'
+print_info: EOG token        = 151645 '<|im_end|>'
+print_info: EOG token        = 151662 '<|fim_pad|>'
+print_info: EOG token        = 151663 '<|repo_name|>'
+print_info: EOG token        = 151664 '<|file_sep|>'
+print_info: max token length = 256
+llama_model_load: vocab only - skipping tensors
+time=2026-05-31T01:28:17.560-07:00 level=INFO source=server.go:400 msg="starting runner" cmd="/packages/apps/ollama/0.12.10/bin/ollama runner --model /scratch/mroycho1/.ollama/models/blobs/sha256-6e7fdda508e91cb0f63de5c15ff79ac63a1584ccafd751c07ca12b7f442101b8 --port 37987"
+time=2026-05-31T01:28:17.567-07:00 level=INFO source=server.go:470 msg="system memory" total="503.5 GiB" free="468.8 GiB" free_swap="0 B"
+time=2026-05-31T01:28:17.568-07:00 level=INFO source=memory.go:37 msg="new model will fit in available VRAM across minimum required GPUs, loading" model=/scratch/mroycho1/.ollama/models/blobs/sha256-6e7fdda508e91cb0f63de5c15ff79ac63a1584ccafd751c07ca12b7f442101b8 library=CUDA parallel=1 required="46.3 GiB" gpus=1
+time=2026-05-31T01:28:17.575-07:00 level=INFO source=server.go:522 msg=offload library=CUDA layers.requested=-1 layers.model=81 layers.offload=81 layers.split=[81] memory.available="[79.2 GiB]" memory.gpu_overhead="0 B" memory.required.full="46.3 GiB" memory.required.partial="46.3 GiB" memory.required.kv="1.2 GiB" memory.required.allocations="[46.3 GiB]" memory.weights.total="43.5 GiB" memory.weights.repeating="42.5 GiB" memory.weights.nonrepeating="974.6 MiB" memory.graph.full="552.0 MiB" memory.graph.partial="1.3 GiB"
+time=2026-05-31T01:28:17.576-07:00 level=INFO source=runner.go:910 msg="starting go runner"
+load_backend: loaded CPU backend from /packages/apps/ollama/0.12.10/lib/ollama/libggml-cpu-haswell.so
+ggml_cuda_init: GGML_CUDA_FORCE_MMQ:    no
+ggml_cuda_init: GGML_CUDA_FORCE_CUBLAS: no
+ggml_cuda_init: found 2 CUDA devices:
+  Device 0: NVIDIA A100-SXM4-80GB, compute capability 8.0, VMM: yes, ID: GPU-dd9832a3-ce5c-0082-c34e-883065c25545
+  Device 1: NVIDIA A100-SXM4-80GB, compute capability 8.0, VMM: yes, ID: GPU-5560f179-3799-1152-fea6-d2d8cf117700
+load_backend: loaded CUDA backend from /packages/apps/ollama/0.12.10/lib/ollama/cuda_v12/libggml-cuda.so
+time=2026-05-31T01:28:17.980-07:00 level=INFO source=ggml.go:104 msg=system CPU.0.SSE3=1 CPU.0.SSSE3=1 CPU.0.AVX=1 CPU.0.AVX2=1 CPU.0.F16C=1 CPU.0.FMA=1 CPU.0.BMI2=1 CPU.0.LLAMAFILE=1 CPU.1.LLAMAFILE=1 CUDA.0.ARCHS=500,520,600,610,700,750,800,860,890,900,1200 CUDA.0.USE_GRAPHS=1 CUDA.0.PEER_MAX_BATCH_SIZE=128 CUDA.1.ARCHS=500,520,600,610,700,750,800,860,890,900,1200 CUDA.1.USE_GRAPHS=1 CUDA.1.PEER_MAX_BATCH_SIZE=128 compiler=cgo(gcc)
+time=2026-05-31T01:28:17.980-07:00 level=INFO source=runner.go:946 msg="Server listening on 127.0.0.1:37987"
+time=2026-05-31T01:28:17.998-07:00 level=INFO source=server.go:1251 msg="waiting for llama runner to start responding"
+time=2026-05-31T01:28:17.988-07:00 level=INFO source=runner.go:845 msg=load request="{Operation:commit LoraPath:[] Parallel:1 BatchSize:512 FlashAttention:false KvSize:4096 KvCacheType: NumThreads:128 GPULayers:81[ID:GPU-dd9832a3-ce5c-0082-c34e-883065c25545 Layers:81(0..80)] MultiUserCache:false ProjectorPath: MainGPU:0 UseMmap:true}"
+time=2026-05-31T01:28:17.999-07:00 level=INFO source=server.go:1285 msg="waiting for server to become available" status="llm server loading model"
+ggml_backend_cuda_device_get_memory device GPU-dd9832a3-ce5c-0082-c34e-883065c25545 utilizing NVML memory reporting free: 85090631680 total: 85899345920
+llama_model_load_from_file_impl: using device CUDA0 (NVIDIA A100-SXM4-80GB) (0000:01:00.0) - 81148 MiB free
+ggml_backend_cuda_device_get_memory device GPU-5560f179-3799-1152-fea6-d2d8cf117700 utilizing NVML memory reporting free: 84648067072 total: 85899345920
+llama_model_load_from_file_impl: using device CUDA1 (NVIDIA A100-SXM4-80GB) (0000:c1:00.0) - 80726 MiB free
+llama_model_loader: loaded meta data with 35 key-value pairs and 963 tensors from /scratch/mroycho1/.ollama/models/blobs/sha256-6e7fdda508e91cb0f63de5c15ff79ac63a1584ccafd751c07ca12b7f442101b8 (version GGUF V3 (latest))
+llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+llama_model_loader: - kv   0:                       general.architecture str              = qwen2
+llama_model_loader: - kv   1:                               general.type str              = model
+llama_model_loader: - kv   2:                               general.name str              = Qwen2.5 72B Instruct
+llama_model_loader: - kv   3:                           general.finetune str              = Instruct
+llama_model_loader: - kv   4:                           general.basename str              = Qwen2.5
+llama_model_loader: - kv   5:                         general.size_label str              = 72B
+llama_model_loader: - kv   6:                            general.license str              = other
+llama_model_loader: - kv   7:                       general.license.name str              = qwen
+llama_model_loader: - kv   8:                       general.license.link str              = https://huggingface.co/Qwen/Qwen2.5-7...
+llama_model_loader: - kv   9:                   general.base_model.count u32              = 1
+llama_model_loader: - kv  10:                  general.base_model.0.name str              = Qwen2.5 72B
+llama_model_loader: - kv  11:          general.base_model.0.organization str              = Qwen
+llama_model_loader: - kv  12:              general.base_model.0.repo_url str              = https://huggingface.co/Qwen/Qwen2.5-72B
+llama_model_loader: - kv  13:                               general.tags arr[str,2]       = ["chat", "text-generation"]
+llama_model_loader: - kv  14:                          general.languages arr[str,1]       = ["en"]
+llama_model_loader: - kv  15:                          qwen2.block_count u32              = 80
+llama_model_loader: - kv  16:                       qwen2.context_length u32              = 32768
+llama_model_loader: - kv  17:                     qwen2.embedding_length u32              = 8192
+llama_model_loader: - kv  18:                  qwen2.feed_forward_length u32              = 29568
+llama_model_loader: - kv  19:                 qwen2.attention.head_count u32              = 64
+llama_model_loader: - kv  20:              qwen2.attention.head_count_kv u32              = 8
+llama_model_loader: - kv  21:                       qwen2.rope.freq_base f32              = 1000000.000000
+llama_model_loader: - kv  22:     qwen2.attention.layer_norm_rms_epsilon f32              = 0.000001
+llama_model_loader: - kv  23:                          general.file_type u32              = 15
+llama_model_loader: - kv  24:                       tokenizer.ggml.model str              = gpt2
+llama_model_loader: - kv  25:                         tokenizer.ggml.pre str              = qwen2
+llama_model_loader: - kv  26:                      tokenizer.ggml.tokens arr[str,152064]  = ["!", "\"", "#", "$", "%", "&", "'", ...
+llama_model_loader: - kv  27:                  tokenizer.ggml.token_type arr[i32,152064]  = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+llama_model_loader: - kv  28:                      tokenizer.ggml.merges arr[str,151387]  = ["Ġ Ġ", "ĠĠ ĠĠ", "i n", "Ġ t",...
+llama_model_loader: - kv  29:                tokenizer.ggml.eos_token_id u32              = 151645
+llama_model_loader: - kv  30:            tokenizer.ggml.padding_token_id u32              = 151643
+llama_model_loader: - kv  31:                tokenizer.ggml.bos_token_id u32              = 151643
+llama_model_loader: - kv  32:               tokenizer.ggml.add_bos_token bool             = false
+llama_model_loader: - kv  33:                    tokenizer.chat_template str              = {%- if tools %}\n    {{- '<|im_start|>...
+llama_model_loader: - kv  34:               general.quantization_version u32              = 2
+llama_model_loader: - type  f32:  401 tensors
+llama_model_loader: - type q5_0:   40 tensors
+llama_model_loader: - type q8_0:   40 tensors
+llama_model_loader: - type q4_K:  401 tensors
+llama_model_loader: - type q5_K:   40 tensors
+llama_model_loader: - type q6_K:   41 tensors
+print_info: file format = GGUF V3 (latest)
+print_info: file type   = Q4_K - Medium
+print_info: file size   = 44.15 GiB (5.22 BPW) 
+load: printing all EOG tokens:
+load:   - 151643 ('<|endoftext|>')
+load:   - 151645 ('<|im_end|>')
+load:   - 151662 ('<|fim_pad|>')
+load:   - 151663 ('<|repo_name|>')
+load:   - 151664 ('<|file_sep|>')
+load: special tokens cache size = 22
+load: token to piece cache size = 0.9310 MB
+print_info: arch             = qwen2
+print_info: vocab_only       = 0
+print_info: n_ctx_train      = 32768
+print_info: n_embd           = 8192
+print_info: n_layer          = 80
+print_info: n_head           = 64
+print_info: n_head_kv        = 8
+print_info: n_rot            = 128
+print_info: n_swa            = 0
+print_info: is_swa_any       = 0
+print_info: n_embd_head_k    = 128
+print_info: n_embd_head_v    = 128
+print_info: n_gqa            = 8
+print_info: n_embd_k_gqa     = 1024
+print_info: n_embd_v_gqa     = 1024
+print_info: f_norm_eps       = 0.0e+00
+print_info: f_norm_rms_eps   = 1.0e-06
+print_info: f_clamp_kqv      = 0.0e+00
+print_info: f_max_alibi_bias = 0.0e+00
+print_info: f_logit_scale    = 0.0e+00
+print_info: f_attn_scale     = 0.0e+00
+print_info: n_ff             = 29568
+print_info: n_expert         = 0
+print_info: n_expert_used    = 0
+print_info: causal attn      = 1
+print_info: pooling type     = -1
+print_info: rope type        = 2
+print_info: rope scaling     = linear
+print_info: freq_base_train  = 1000000.0
+print_info: freq_scale_train = 1
+print_info: n_ctx_orig_yarn  = 32768
+print_info: rope_finetuned   = unknown
+print_info: model type       = 70B
+print_info: model params     = 72.71 B
+print_info: general.name     = Qwen2.5 72B Instruct
+print_info: vocab type       = BPE
+print_info: n_vocab          = 152064
+print_info: n_merges         = 151387
+print_info: BOS token        = 151643 '<|endoftext|>'
+print_info: EOS token        = 151645 '<|im_end|>'
+print_info: EOT token        = 151643 '<|endoftext|>'
+print_info: PAD token        = 151643 '<|endoftext|>'
+print_info: LF token         = 198 'Ċ'
+print_info: FIM PRE token    = 151659 '<|fim_prefix|>'
+print_info: FIM SUF token    = 151661 '<|fim_suffix|>'
+print_info: FIM MID token    = 151660 '<|fim_middle|>'
+print_info: FIM PAD token    = 151662 '<|fim_pad|>'
+print_info: FIM REP token    = 151663 '<|repo_name|>'
+print_info: FIM SEP token    = 151664 '<|file_sep|>'
+print_info: EOG token        = 151643 '<|endoftext|>'
+print_info: EOG token        = 151645 '<|im_end|>'
+print_info: EOG token        = 151662 '<|fim_pad|>'
+print_info: EOG token        = 151663 '<|repo_name|>'
+print_info: EOG token        = 151664 '<|file_sep|>'
+print_info: max token length = 256
+load_tensors: loading model tensors, this can take a while... (mmap = true)
+load_tensors: offloading 80 repeating layers to GPU
+load_tensors: offloading output layer to GPU
+load_tensors: offloaded 81/81 layers to GPU
+load_tensors:        CUDA0 model buffer size = 44545.20 MiB
+load_tensors:   CPU_Mapped model buffer size =   668.25 MiB
+llama_context: constructing llama_context
+llama_context: n_seq_max     = 1
+llama_context: n_ctx         = 4096
+llama_context: n_ctx_per_seq = 4096
+llama_context: n_batch       = 512
+llama_context: n_ubatch      = 512
+llama_context: causal_attn   = 1
+llama_context: flash_attn    = disabled
+llama_context: kv_unified    = false
+llama_context: freq_base     = 1000000.0
+llama_context: freq_scale    = 1
+llama_context: n_ctx_per_seq (4096) < n_ctx_train (32768) -- the full capacity of the model will not be utilized
+llama_context:  CUDA_Host  output buffer size =     0.61 MiB
+llama_kv_cache:      CUDA0 KV buffer size =  1280.00 MiB
+llama_kv_cache: size = 1280.00 MiB (  4096 cells,  80 layers,  1/1 seqs), K (f16):  640.00 MiB, V (f16):  640.00 MiB
+llama_context: pipeline parallelism enabled (n_copies=4)
+llama_context:      CUDA0 compute buffer size =   688.03 MiB
+llama_context:  CUDA_Host compute buffer size =    64.04 MiB
+llama_context: graph nodes  = 3126
+llama_context: graph splits = 2
+time=2026-05-31T01:29:46.352-07:00 level=INFO source=server.go:1289 msg="llama runner started in 88.79 seconds"
+time=2026-05-31T01:29:46.356-07:00 level=INFO source=sched.go:500 msg="loaded runners" count=1
+time=2026-05-31T01:29:46.357-07:00 level=INFO source=server.go:1251 msg="waiting for llama runner to start responding"
+time=2026-05-31T01:29:46.357-07:00 level=INFO source=server.go:1289 msg="llama runner started in 88.79 seconds"
+[GIN] 2026/05/31 - 01:29:46 | 200 |         1m30s |   10.139.125.11 | POST     "/api/generate"
+TEST: Hi there! How can
+=== Qwen working — running corruption experiment ===
+[GIN] 2026/05/31 - 01:29:56 | 200 |   11.650401ms |   10.139.125.11 | GET      "/api/tags"
+[GIN] 2026/05/31 - 01:30:07 | 200 | 11.039101329s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:30:11 | 200 |   4.18722416s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:30:22 | 200 | 10.714814078s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:30:25 | 200 |  2.671973364s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:30:29 | 200 |  4.249834861s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:30:32 | 200 |  2.669382892s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:30:36 | 200 |  4.260975241s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:30:46 | 200 | 10.498076401s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:30:58 | 200 | 11.780330134s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:31:08 | 200 | 10.249055245s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:31:11 | 200 |  2.612967415s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:31:15 | 200 |  4.254901829s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:31:25 | 200 | 10.213958616s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:31:30 | 200 |  4.287499038s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:31:33 | 200 |  3.068683064s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:31:41 | 200 |  8.234223678s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:31:45 | 200 |  4.287165139s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:31:55 | 200 | 10.039649542s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:32:05 | 200 |   9.12035114s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:32:12 | 200 |  7.561924602s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:32:21 | 200 |  9.070548001s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:32:25 | 200 |  4.247486056s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:32:42 | 200 | 16.256506047s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:32:52 | 200 |  10.44480675s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:32:57 | 200 |  4.385927316s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:32:59 | 200 |   2.67024663s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:33:07 | 200 |  8.103483167s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:33:28 | 200 | 21.175561384s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:33:33 | 200 |  4.282296665s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:33:37 | 200 |  4.198373758s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:33:41 | 200 |  4.201499327s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:33:52 | 200 | 10.532799486s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:33:56 | 200 |  4.257753622s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:34:04 | 200 |  8.063562038s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:34:10 | 200 |  6.455138856s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:34:19 | 200 |  8.776342699s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:34:24 | 200 |  4.256923176s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:34:28 | 200 |  4.198840037s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:34:39 | 200 | 11.292999525s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:34:48 | 200 |  8.694152848s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:35:07 | 200 | 19.350531912s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:35:25 | 200 | 18.046002877s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:35:35 | 200 |  9.614697297s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:35:43 | 200 |  8.000127885s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:36:00 | 200 | 16.950578428s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:36:08 | 200 |   7.87753236s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:36:19 | 200 | 11.530945593s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:36:42 | 200 | 22.754116468s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:36:53 | 200 | 10.993308798s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:37:16 | 200 | 22.853339963s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:37:19 | 200 |  3.331633535s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:37:35 | 200 | 16.356776537s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:37:45 | 200 |  9.385915196s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:37:55 | 200 | 10.210856211s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:38:03 | 200 |  7.533875281s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:38:25 | 200 | 22.880448185s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:38:33 | 200 |  8.058590369s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:38:55 | 200 | 21.856471619s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:39:12 | 200 | 17.010098079s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:39:23 | 200 | 10.951513775s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:39:44 | 200 | 21.129618482s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:39:49 | 200 |  4.264308417s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:40:07 | 200 | 18.507558176s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:40:19 | 200 | 11.680005912s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:40:24 | 200 |  5.031976989s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:40:27 | 200 |  2.878038711s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:40:40 | 200 |  13.03864113s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:40:52 | 200 | 12.337000726s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:41:10 | 200 | 17.802564914s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:41:23 | 200 |  13.22607669s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:41:35 | 200 | 11.876627639s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:41:44 | 200 |  9.371183737s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:41:55 | 200 | 10.924380892s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:42:14 | 200 | 18.818384864s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:42:21 | 200 |  6.368982965s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:42:41 | 200 | 20.353466405s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:42:53 | 200 | 12.167705266s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:43:06 | 200 |  13.02231001s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:43:23 | 200 | 16.873348571s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:43:46 | 200 | 22.866243946s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:43:59 | 200 | 13.489549124s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:44:22 | 200 | 22.849691275s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:44:42 | 200 | 20.026123299s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:44:56 | 200 | 13.911324107s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:45:10 | 200 | 13.521480708s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:45:33 | 200 | 22.863146319s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:45:55 | 200 | 22.909280394s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:46:18 | 200 |  22.85371145s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:46:40 | 200 | 21.978462883s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:47:03 | 200 | 22.876781741s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:47:11 | 200 |  7.707826233s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:47:26 | 200 | 14.805206056s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:47:47 | 200 | 21.586283753s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:48:05 | 200 |  17.80613608s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:48:13 | 200 |  8.234751024s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:48:36 | 200 | 22.631851894s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:48:49 | 200 | 12.972837446s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:49:12 | 200 | 22.677814995s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:49:25 | 200 | 13.856871009s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:49:47 | 200 | 21.885823964s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:50:01 | 200 | 13.595375338s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:50:18 | 200 | 17.453879945s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:50:38 | 200 |  19.65278545s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:51:01 | 200 | 22.888337784s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:51:12 | 200 |  10.94978612s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:51:20 | 200 |  8.575836194s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:51:43 | 200 | 22.916929384s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:52:06 | 200 | 22.849897386s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:52:23 | 200 | 16.647235928s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:52:45 | 200 | 22.223397108s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:53:02 | 200 | 16.860040837s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:53:21 | 200 |  19.35324673s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:53:36 | 200 | 14.765028574s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:53:54 | 200 | 17.823029253s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:54:08 | 200 |  14.40488712s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:54:31 | 200 | 22.896979817s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:54:45 | 200 | 13.611971438s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:55:06 | 200 | 21.581831355s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:55:20 | 200 | 13.096927019s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:55:41 | 200 | 21.820011537s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:55:57 | 200 | 15.865795259s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:56:07 | 200 |  10.26366342s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:56:21 | 200 | 13.783130521s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:56:34 | 200 | 12.779330651s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:56:57 | 200 |  22.63541061s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:57:05 | 200 |   7.98411353s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:57:24 | 200 | 18.997464772s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:57:46 | 200 | 22.780918317s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:58:09 | 200 | 22.864685531s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:58:32 | 200 | 22.866185989s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:58:53 | 200 | 20.736194356s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:59:16 | 200 | 22.841085304s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:59:39 | 200 | 22.861643891s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 01:59:55 | 200 |  15.87202679s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:00:03 | 200 |  8.640461602s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:00:24 | 200 | 21.026001252s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:00:39 | 200 | 14.995096949s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:01:02 | 200 | 22.893974627s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:01:21 | 200 | 19.309161952s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:01:43 | 200 | 21.839697428s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:02:06 | 200 | 22.881612766s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:02:29 | 200 | 22.605011391s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:02:52 | 200 | 22.863189392s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:03:14 | 200 | 22.855247197s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:03:29 | 200 | 14.155235392s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:03:36 | 200 |  7.738598641s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:03:50 | 200 | 14.120210608s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:04:05 | 200 | 14.761780734s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:04:25 | 200 | 19.724771983s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:04:48 | 200 | 22.859465245s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:05:09 | 200 | 21.512189678s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:05:31 | 200 | 21.843709318s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:05:54 | 200 | 22.847365066s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:06:14 | 200 | 20.406516107s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:06:34 | 200 |  19.56567778s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:06:57 | 200 | 22.863250397s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:07:15 | 200 | 18.282797035s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:07:33 | 200 | 17.416983238s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:07:55 | 200 | 22.872781044s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:08:18 | 200 | 22.198213845s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:08:37 | 200 | 18.894553797s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:08:54 | 200 | 17.720361143s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:09:16 | 200 | 22.197009717s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:09:24 | 200 |  7.086671479s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:09:42 | 200 |  18.15977706s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:09:49 | 200 |  7.539262211s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:10:07 | 200 | 18.178678074s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:10:30 | 200 | 22.198766426s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:10:52 | 200 | 22.188883175s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:11:14 | 200 | 22.192117478s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:11:21 | 200 |  7.482629764s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:11:39 | 200 | 17.366250257s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:12:01 | 200 | 22.207299564s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:12:19 | 200 | 18.182125449s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:12:27 | 200 |  7.606762315s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:12:49 | 200 |  22.18964258s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:13:07 | 200 | 18.170262267s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:13:29 | 200 | 22.199499043s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:13:52 | 200 | 22.221312603s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:14:14 | 200 | 22.124204993s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:14:36 | 200 | 22.141527142s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:14:52 | 200 | 16.195423868s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:15:14 | 200 | 22.216037804s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:15:37 | 200 | 22.193168825s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:15:56 | 200 | 19.529829049s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:16:04 | 200 |  7.533526904s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:16:23 | 200 |  19.82042443s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:16:46 | 200 | 22.202658425s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:17:04 | 200 | 18.267972041s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:17:22 | 200 | 18.099330857s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:17:40 | 200 |  18.18793166s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:18:02 | 200 | 22.181159126s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:18:19 | 200 | 16.210402992s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:18:41 | 200 | 22.202474318s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:19:03 | 200 | 22.135957096s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:19:25 | 200 | 22.146099987s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:19:41 | 200 | 16.197000639s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:19:59 | 200 | 18.183058969s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:20:22 | 200 | 22.203479192s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:20:42 | 200 | 20.748491266s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:20:55 | 200 | 12.459698858s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:21:07 | 200 | 11.732354182s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:21:20 | 200 | 13.724879277s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:21:24 | 200 |  3.548708321s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:21:36 | 200 | 11.813030213s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:21:39 | 200 |  3.371779262s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:21:51 | 200 | 11.797798574s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:22:13 | 200 | 22.119239196s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:22:31 | 200 |  17.57622583s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:22:48 | 200 | 17.482727571s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:23:11 | 200 | 22.875294809s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:23:33 | 200 | 22.127509911s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:23:55 | 200 | 22.198196368s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:24:04 | 200 |  8.444507718s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:24:26 | 200 | 22.197706845s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:24:34 | 200 |  7.834455305s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:24:56 | 200 | 22.287018246s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:25:18 | 200 | 22.192323122s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:25:40 | 200 | 22.207425477s |   10.139.125.11 | POST     "/api/generate"
+[GIN] 2026/05/31 - 02:26:03 | 200 | 22.194216628s |   10.139.125.11 | POST     "/api/generate"
+Checking checkpoints...
+  guru_baseline_5000ep.pt: surf_dim=30  BW ρ=0.688
+  → Using guru_baseline_5000ep.pt
+
+=================================================================
+EXP C: Progressive semantic corruption
+  N=40/level  Model: qwen2.5:72b
+=================================================================
+
+    Level    Success    Refusal    Halluci
+  ----------------------------------------
+       0%      87.5%      12.5%       0.0%
+      25%      80.0%      12.5%       0.0%
+      50%      75.0%      10.0%       2.5%
+      75%      57.5%      12.5%       0.0%
+     100%      52.5%      12.5%       0.0%
+
+  Stratified (0% vs 100% corruption):
+    easy: 0%=80%  100%=0%  drop=+80%
+
+  Interaction test (hard instances degrade faster?):
+    easy: drop=80.0%
+  → Interaction weak: hard=0.0% easy=80.0%
+
+  Saved → /scratch/mroycho1/GURU/results_planning/progressive_corruption.json
+
+Done.
+=== Done at Sun May 31 02:26:04 MST 2026 ===
+Traceback (most recent call last):
+  File "<string>", line 11, in <module>
+    for level, v in sorted(r.items(), key=lambda x: int(x[0].replace('%',''))):
+                    ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 11, in <lambda>
+    for level, v in sorted(r.items(), key=lambda x: int(x[0].replace('%',''))):
+                                                    ~~~^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '0.0'
+Level     LLM%    ARC|rho|   |O||rho|
+---------------------------------------------

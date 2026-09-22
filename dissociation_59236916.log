@@ -1,0 +1,31 @@
+========================================================================
+Loaded: Ollama 0.12.10
+========================================================================
+
+Ollama Host for this session http://sg023:11434
+
+To start the ollama server in the background run
+   ollama-start
+
+To stop the ollama server run
+   ollama-stop
+
+*************************************************
+NOTE Ollama will not run on a login node, start
+an interactive session to run ollama ie
+  interactive -G 1 -t 0-4:00
+That will start an session for 4 hours with a GPU
+*************************************************
+     
+Host: http://sg023:11434
+Traceback (most recent call last):
+  File "/scratch/mroycho1/GURU/plan_step31_with_perinst.py", line 37, in <module>
+    import torch
+  File "/etc/python/sitecustomize.py", line 117, in _import
+    mod = _original_import(name, globals, locals, fromlist, level)
+ModuleNotFoundError: No module named 'torch'
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/etc/python/sitecustomize.py", line 117, in _import
+    mod = _original_import(name, globals, locals, fromlist, level)
+ModuleNotFoundError: No module named 'torch'
